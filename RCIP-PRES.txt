@@ -1,0 +1,53 @@
+Robot Controller Interface Project
+(=> -> * -)
+I. INFORMATIQUE
+  1. SITE PRINCIPAL
+    => FRONT END
+      -> Technologies: Bootstrap / jQuery
+      -> Fonctionnalités (pages):
+        * Accueil
+          - Navbar: ajout / connexion / historique de connexion
+        * Ajout d'un Robot
+          - Nom Admin
+          - ID Robot (confirmation)
+          - IP ESP (confirmation)
+          - Mot de passe (confirmation)
+        * Connexion à un robot
+          - Nom Admin
+          - ID Robot
+          - Mot de passe
+        * Profil
+          - Robot :idRobot (text)
+          - Mot de passe actuel (text)
+          - IP ESP (text)
+          - Controler le robot (lien)
+          - Edition profil (lien)
+          - Deconnexion (lien)
+        * Edition du profil
+          - ID Robot
+          - IP ESP
+          - Mot de passe
+        * Deconnexion
+          - Fermeture de la session en cours
+        * Supprimer un robot
+          - Nom Admin
+          - ID Robot
+          - Mot de passe (confirmation)
+    => BACK END
+      -> Technologies: mySQL / PHP / Apache server
+  2. CONTROL DES ROBOTS (ESP8266)
+    => ROBOTS
+      -> Moteurs CC basiques + roues
+      -> Pont en H L298N
+      -> Alimentation
+        * Pile 9v ?
+        * Batterie nomade ?
+        * Induction (se renseigner sur le fonctionnement) ?
+    => ROBOT1 -> 192.168.1.42
+      -> Particularité: GPS
+      -> Récupérer longitude et latitude => carte interactive
+    => ROBOT2 -> 192.168.1.59
+      -> Particularité: CAMERA
+      -> Champ pour le flux vidéo (se renseigner sur le fonctionnement)
+II. ELECTRONIQUE
+III. MECANIQUE

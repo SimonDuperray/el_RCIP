@@ -43,10 +43,10 @@ I. INFORMATIQUE
         * Pile 9v ?
         * Batterie nomade ?
         * Induction (se renseigner sur le fonctionnement) ?
-    => ROBOT1 -> 192.168.1.42
+    => ROBOT1
       -> Particularité: GPS
       -> Récupérer longitude et latitude => carte interactive
-    => ROBOT2 -> 192.168.1.59
+    => ROBOT2
       -> Particularité: CAMERA
       -> Champ pour le flux vidéo (se renseigner sur le fonctionnement)
 II. ELECTRONIQUE

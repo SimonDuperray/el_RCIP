@@ -37,7 +37,7 @@
   <h5 id="rcip-title">Robot Control Interface Project</h5>
   <div class="main-pres">
     <div class="both-pres" id="pres-1">
-      <h1>Robot1</h1>
+      <h1>Robot 1</h1>
       <div class="text-pres" id="text-pres-1">
         Module GPS
         <br><br>
@@ -47,7 +47,7 @@
       </div>
     </div>
     <div class="both-pres" id="pres-2">
-      <h1>Robot2</h1>
+      <h1>Robot 2</h1>
       <div class="text-pres" id="text-pres-2">
         Module caméra
         <br><br>

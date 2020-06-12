@@ -4,6 +4,12 @@ I. INFORMATIQUE
   1. SITE PRINCIPAL
     => FRONT END
       -> Technologies: Bootstrap / jQuery
+      -> Palette de couleurs: 
+        * #1c2238 : foncé ++
+        * #292f49 : navbar
+        * #c8d0f2 : pres
+        * #3498DB : bleu lignes
+        * #4b5686 : hover navbar li
       -> Fonctionnalités (pages):
         * Accueil
           - Navbar: ajout / connexion / historique de connexion

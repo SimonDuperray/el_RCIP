@@ -34,7 +34,7 @@ if(isset($_POST['addRobot']))
                 {
                   $insertrobot = $bdd->prepare("INSERT INTO test_robots (idrobot, ipesp, password) VALUES (?, ?, ?)");
                   $insertrobot->execute(array($idrobot, $ip, $password));
-                  $erreur = "Le robot a bien été ajouté à la base de données ! <a href=\"connectToRobot.php\">Se connecter</a>";
+                  $erreur = "Le robot a bien été ajouté à la base de données ! <a id='connect-to' href=\"connectToRobot.php\">Se connecter</a>";
                 }
                 else
                 {
@@ -107,7 +107,6 @@ if(isset($_POST['addRobot']))
     {
       color: #c8d0f2;
       text-align: center;
-      /* border-bottom: 3px solid #3498DB; */
       border-bottom: 2px solid;
       border-image-source: linear-gradient(45deg, #3498DB, #DC7633);
       border-image-slice: 1;
@@ -124,7 +123,7 @@ if(isset($_POST['addRobot']))
       margin-right: 400px!important;
       margin-top: 75px;
       width: auto!important;
-      height: 470px;
+      height: 490px;
       border: 2px solid;
       border-image-source: linear-gradient(45deg, #3498DB, #DC7633);
       border-image-slice: 1;
@@ -182,8 +181,8 @@ if(isset($_POST['addRobot']))
     }
     #error 
     {
-      margin-left: 100px;
-      margin-right: 100px;
+      margin-left: 130px;
+      margin-right: 130px;
       width: auto;
       text-align: center;
       padding-bottom: 20px;
@@ -213,6 +212,11 @@ if(isset($_POST['addRobot']))
     /* ------------- */
     /* FIN BACK MENU */
     /* ------------- */
+    #connect-to 
+    {
+      color: #DC7633;
+      font-weight: bold;
+    }
   </style>
   <!-- FIN CSS -->
 </head>
@@ -277,7 +281,7 @@ if(isset($_POST['addRobot']))
         <?php
           if(isset($erreur))
           {
-            echo '<font color="#3498DB">' . $erreur . '</font>';
+            echo '<font color="#DC7633">' . $erreur . '</font>';
           }
         ?>
       </div>

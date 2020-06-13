@@ -24,6 +24,9 @@
         <a class="nav-link" href="connectToRobot.php">Connexion à un robot</a>
       </li>
       <li class="nav-item">
+        <a href="deleteRobot.php" class="nav-link">Suppression d'un robot</a>
+      </li>
+      <li class="nav-item">
         <a class="nav-link" href="#">Historique des connexions</a>
       </li>
       <li class="nav-item">

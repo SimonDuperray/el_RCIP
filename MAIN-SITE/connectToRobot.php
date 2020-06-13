@@ -3,12 +3,13 @@ session_start();
 $bdd = new PDO("mysql:host=127.0.0.1;dbname=interfacing_controller", "root", "");
 if(isset($_POST['connectToRobot']))
 {
+  $admin = "Kartodix";
   $pseudoconnect = htmlspecialchars($_POST['pseudoconnect']);
   $idrobotconnect = htmlspecialchars($_POST['idrobotconnect']);
   $passwordconnect = htmlspecialchars($_POST['passwordconnect']);
   if(!empty($pseudoconnect) AND !empty($idrobotconnect) AND !empty($passwordconnect))
   {
-    if($pseudoconnect == "Kartodix")
+    if($pseudoconnect == $admin)
     {
       $reqrobot = $bdd->prepare("SELECT * FROM test_robots WHERE idrobot = ? AND password = ?");
       $reqrobot->execute(array($idrobotconnect, $passwordconnect));

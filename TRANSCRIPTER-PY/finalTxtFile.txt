@@ -1,0 +1,590 @@
+client.println("<?php");
+
+client.println("$bdd = new PDO("mysql:host=127.0.0.1;dbname=interfacing_controller", "root", "");");
+
+client.println("if(isset($_POST['addRobot']))");
+
+client.println("{");
+
+client.println("$admin = "Kartodix";");
+
+client.println("$pseudo = htmlspecialchars($_POST['pseudo']);");
+
+client.println("$idrobot = htmlspecialchars($_POST['idrobot']);");
+
+client.println("$idrobot2 = htmlspecialchars($_POST['idrobot2']);");
+
+client.println("$ip = htmlspecialchars($_POST['ip']);");
+
+client.println("$ip2 = htmlspecialchars($_POST['ip2']);");
+
+client.println("$password = htmlspecialchars($_POST['password']);");
+
+client.println("$password2 = htmlspecialchars($_POST['password2']);");
+
+client.println("if(!empty($_POST['pseudo']) AND !empty($_POST['idrobot']) AND !empty($_POST['idrobot2']) AND !empty($_POST['ip']) AND !empty($_POST['ip2']) AND !empty($_POST['password']) AND !empty($_POST['password2']))");
+
+client.println("{");
+
+client.println("if($pseudo == $admin)");
+
+client.println("{");
+
+client.println("if(strlen($idrobot) < 256)");
+
+client.println("{");
+
+client.println("if($idrobot == $idrobot2)");
+
+client.println("{");
+
+client.println("$reqid = $bdd->prepare("SELECT * FROM test_robots WHERE idrobot = ?");");
+
+client.println("$reqid->execute(array($idrobot));");
+
+client.println("$idexist = $reqid->rowCount();");
+
+client.println("if($idexist == 0)");
+
+client.println("{");
+
+client.println("if($ip == $ip2)");
+
+client.println("{");
+
+client.println("$reqipesp = $bdd->prepare("SELECT * FROM test_robots WHERE ipesp = ?");");
+
+client.println("$reqipesp->execute(array($ip));");
+
+client.println("$ipespexist = $reqipesp->rowCount();");
+
+client.println("if($ipespexist == 0)");
+
+client.println("{");
+
+client.println("if($password == $password2)");
+
+client.println("{");
+
+client.println("$insertrobot = $bdd->prepare("INSERT INTO test_robots (idrobot, ipesp, password) VALUES (?, ?, ?)");");
+
+client.println("$insertrobot->execute(array($idrobot, $ip, $password));");
+
+client.println("$erreur = "Le robot a bien été ajouté à la base de données ! <a id='connect-to' href=\"connectToRobot.php\">Se connecter</a>";");
+
+client.println("}");
+
+client.println("else");
+
+client.println("{");
+
+client.println("$erreur = "Les password ne correspondent pas !";");
+
+client.println("}");
+
+client.println("}");
+
+client.println("else");
+
+client.println("{");
+
+client.println("$erreur = "L'ip est déjà enregistrée !";");
+
+client.println("}");
+
+client.println("}");
+
+client.println("else");
+
+client.println("{");
+
+client.println("$erreur = "Les ip ne correspondent pas !";");
+
+client.println("}");
+
+client.println("}");
+
+client.println("else");
+
+client.println("{");
+
+client.println("$erreur = "Le robot est déjà enregistré !";");
+
+client.println("}");
+
+client.println("}");
+
+client.println("else");
+
+client.println("{");
+
+client.println("$erreur = "Les id ne correspondent pas !";");
+
+client.println("}");
+
+client.println("}");
+
+client.println("else");
+
+client.println("{");
+
+client.println("$erreur = "L'id du robot est trop long !";");
+
+client.println("}");
+
+client.println("}");
+
+client.println("else");
+
+client.println("{");
+
+client.println("$erreur = "Vous n'avez pas la permission d'ajouter un robot !";");
+
+client.println("}");
+
+client.println("}");
+
+client.println("else");
+
+client.println("{");
+
+client.println("$erreur = "Tous les champs doivent être completés !";");
+
+client.println("}");
+
+client.println("}");
+
+client.println("?>");
+
+client.println("<!DOCTYPE html>");
+
+client.println("<html>");
+
+client.println("<head>");
+
+client.println("<meta charset="UTF-8">");
+
+client.println("<meta name="viewport" content="width=device-width, initial-scale=1.0">");
+
+client.println("<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">");
+
+client.println("<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" integrity="sha256-h20CPZ0QyXlBuAw7A+KluUYx/3pK+c7lYEpqLTlxjYQ=" crossorigin="anonymous" />");
+
+client.println("<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>");
+
+client.println("<link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">");
+
+client.println("<!-- DEBUT CSS -->");
+
+client.println("<title>AddRobot</title>");
+
+client.println("<style type="text/css">");
+
+client.println("/* ------- */");
+
+client.println("/* GENERAL */");
+
+client.println("/* ------- */");
+
+client.println("body");
+
+client.println("{");
+
+client.println("margin: 0;");
+
+client.println("padding: 0;");
+
+client.println("box-sizing: border-box;");
+
+client.println("background-color: #1c2238;");
+
+client.println("font-family: "Poppins", sans-serif;");
+
+client.println("}");
+
+client.println("/* FIN GENERAL */");
+
+client.println("/* ----------- */");
+
+client.println("/*  FORM GROUP */");
+
+client.println(".main-title");
+
+client.println("{");
+
+client.println("color: #c8d0f2;");
+
+client.println("text-align: center;");
+
+client.println("border-bottom: 2px solid;");
+
+client.println("border-image-source: linear-gradient(45deg, #3498DB, #DC7633);");
+
+client.println("border-image-slice: 1;");
+
+client.println("margin-left: 50px;");
+
+client.println("margin-right: 50px;");
+
+client.println("width: auto;");
+
+client.println("padding-bottom: 10px;");
+
+client.println("padding-top: 15px;");
+
+client.println("letter-spacing: 2px;");
+
+client.println("}");
+
+client.println("form");
+
+client.println("{");
+
+client.println("margin-left: 400px!important;");
+
+client.println("margin-right: 400px!important;");
+
+client.println("margin-top: 75px;");
+
+client.println("width: auto!important;");
+
+client.println("height: 490px;");
+
+client.println("border: 2px solid;");
+
+client.println("border-image-source: linear-gradient(45deg, #3498DB, #DC7633);");
+
+client.println("border-image-slice: 1;");
+
+client.println("border-radius: 10px;");
+
+client.println("padding-left: 25px;");
+
+client.println("padding-right: 25px;");
+
+client.println("}");
+
+client.println(".form-control");
+
+client.println("{");
+
+client.println("height: 50px;");
+
+client.println("border: 1px solid #292f49;");
+
+client.println("border-radius: 10px;");
+
+client.println("background-color: #292f49;");
+
+client.println("text-indent: 25px;");
+
+client.println("color: white;");
+
+client.println("}");
+
+client.println(".form-control:focus");
+
+client.println("{");
+
+client.println("background-color: #292f49;");
+
+client.println("color: #c8d0f2;");
+
+client.println("border: 2px solid #DC7633;");
+
+client.println("box-shadow: none;");
+
+client.println("}");
+
+client.println("#ask-admin");
+
+client.println("{");
+
+client.println("margin-left: 150px!important;");
+
+client.println("margin-right: 150px!important;");
+
+client.println("width: auto!important;");
+
+client.println("}");
+
+client.println("input");
+
+client.println("{");
+
+client.println("margin-right: 0!important;");
+
+client.println("}");
+
+client.println("#submit");
+
+client.println("{");
+
+client.println("color: white!important;");
+
+client.println("background-color: #3498DB!important;");
+
+client.println("border: 1px solid #3498DB!important;");
+
+client.println("border-radius: 10px!important;");
+
+client.println("height: 50px!important;");
+
+client.println("font-weight: 700!important;");
+
+client.println("letter-spacing: 1px;");
+
+client.println("font-size: 13px!important;");
+
+client.println("margin-left: 150px!important;");
+
+client.println("margin-right: 150px!important;");
+
+client.println("width: auto!important;");
+
+client.println("}");
+
+client.println("#submit:hover");
+
+client.println("{");
+
+client.println("background-color: #2E86C1!important;");
+
+client.println("}");
+
+client.println("label");
+
+client.println("{");
+
+client.println("color: #1c2238;");
+
+client.println("}");
+
+client.println("#error");
+
+client.println("{");
+
+client.println("margin-left: 130px;");
+
+client.println("margin-right: 130px;");
+
+client.println("width: auto;");
+
+client.println("text-align: center;");
+
+client.println("padding-bottom: 20px;");
+
+client.println("}");
+
+client.println("/* FIN FORM GROUP */");
+
+client.println("/* -------------- */");
+
+client.println("/*    BACK MENU   */");
+
+client.println(".back-menu");
+
+client.println("{");
+
+client.println("margin-left: 150px!important;");
+
+client.println("margin-right: 150px!important;");
+
+client.println("width: auto!important;");
+
+client.println("text-align: center!important;");
+
+client.println("padding-top: 20px;");
+
+client.println("}");
+
+client.println(".back-menu a");
+
+client.println("{");
+
+client.println("text-decoration: none;");
+
+client.println("color: #3498DB;");
+
+client.println("font-weight: bold;");
+
+client.println("font-size: 20px;");
+
+client.println("}");
+
+client.println(".back-menu a:hover");
+
+client.println("{");
+
+client.println("text-decoration: underline;");
+
+client.println("}");
+
+client.println("/* ------------- */");
+
+client.println("/* FIN BACK MENU */");
+
+client.println("/* ------------- */");
+
+client.println("#connect-to");
+
+client.println("{");
+
+client.println("color: #DC7633;");
+
+client.println("font-weight: bold;");
+
+client.println("}");
+
+client.println("</style>");
+
+client.println("<!-- FIN CSS -->");
+
+client.println("</head>");
+
+client.println("<body>");
+
+client.println("<div class="container-fluid main-div">");
+
+client.println("<!-- ---------- -->");
+
+client.println("<!-- MAIN TITLE -->");
+
+client.println("<!-- ---------- -->");
+
+client.println("<div class="main-title">");
+
+client.println("<h1>RCI - Project => Ajout d'un robot</h1>");
+
+client.println("</div>");
+
+client.println("<!-- -------------- -->");
+
+client.println("<!-- END MAIN TITLE -->");
+
+client.println("<!-- -------------- -->");
+
+client.println("<form action="" method="POST">");
+
+client.println("<div class="row">");
+
+client.println("<div id="ask-admin" class="col">");
+
+client.println("<label for="pseudo">Administrator</label>");
+
+client.println("<input type="text" class="form-control" id="pseudo" name="pseudo" placeholder="Administrator" value="<?php if(isset($pseudo)){echo $pseudo;}?>">");
+
+client.println("</div>");
+
+client.println("</div>");
+
+client.println("<div class="row">");
+
+client.println("<div class="col">");
+
+client.println("<label for="idrobot">Robot ID</label>");
+
+client.println("<input type="text" class="form-control" id="idrobot" name="idrobot" placeholder="Robot ID" value="<?php if(isset($idrobot)){echo $idrobot;}?>">");
+
+client.println("</div>");
+
+client.println("<div class="col">");
+
+client.println("<label for="idrobot2">Confirm Robot ID</label>");
+
+client.println("<input type="text" class="form-control" id="idrobot2" name="idrobot2" placeholder="Confirm Robot ID" value="<?php if(isset($idrobot2)){echo $idrobot2;}?>">");
+
+client.println("</div>");
+
+client.println("</div>");
+
+client.println("<div class="row">");
+
+client.println("<div class="col">");
+
+client.println("<label for="ip">IP ESP</label>");
+
+client.println("<input type="text" class="form-control" id="ip" name="ip" placeholder="IP ESP" value="<?php if(isset($ip)){echo $ip;}?>">");
+
+client.println("</div>");
+
+client.println("<div class="col">");
+
+client.println("<label for="ip2">Confirm IP ESP</label>");
+
+client.println("<input type="text" class="form-control" id="ip2" name="ip2" placeholder="Confirm IP ESP" value="<?php if(isset($ip2)){echo $ip2;}?>">");
+
+client.println("</div>");
+
+client.println("</div>");
+
+client.println("<div class="row">");
+
+client.println("<div class="col">");
+
+client.println("<label for="ip">Password</label>");
+
+client.println("<input type="password" class="form-control" id="password" name="password" placeholder="Password" value="<?php if(isset($password)){echo $password;}?>">");
+
+client.println("</div>");
+
+client.println("<div class="col">");
+
+client.println("<label for="password2">Confirm Password</label>");
+
+client.println("<input type="password" class="form-control" id="password2" name="password2" placeholder="Confirm Password" value="<?php if(isset($password2)){echo $password2;}?>">");
+
+client.println("</div>");
+
+client.println("</div>");
+
+client.println("<br>");
+
+client.println("<div class="row">");
+
+client.println("<div class="col">");
+
+client.println("<label for="">Ajouter robot</label>");
+
+client.println("<input id="submit" type="submit" name="addRobot" value="Add New Robot">");
+
+client.println("</div>");
+
+client.println("</div>");
+
+client.println("<br>");
+
+client.println("<div id="error">");
+
+client.println("<div class="line">");
+
+client.println("<?php");
+
+client.println("if(isset($erreur))");
+
+client.println("{");
+
+client.println("echo '<font color="#DC7633">' . $erreur . '</font>';");
+
+client.println("}");
+
+client.println("?>");
+
+client.println("</div>");
+
+client.println("</div>");
+
+client.println("</form>");
+
+client.println("<div class="back-menu">");
+
+client.println("<a href="main.php"><i class="fas fa-home"></i> Go To Menu</a>");
+
+client.println("</div>");
+
+client.println("</div>");
+
+client.println("</body>");
+
+client.println("</html>");
+

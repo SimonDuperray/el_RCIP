@@ -11,9 +11,9 @@ def transformClient(file):
             line = fp.readline()
     return transformedLines
 
-def createNewFile(newFileParam):
-    finalTxtFile = open("finalTxtFile.txt", "w+")
-    for line in range(len(newFileParam)):
-        finalTxtFile.write(newFileParam[line]+'\n')
+def createNewFile(transformed, finalFile):
+    finalTxtFile = open(finalFile, "w+")
+    for line in range(len(transformed)):
+        finalTxtFile.write(transformed[line]+'\n')
 
-createNewFile(transformClient('test.txt'))
+createNewFile(transformClient('test.html'), 'finalTxtFile.ino')

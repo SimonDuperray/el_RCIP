@@ -15,4 +15,8 @@ def createNewFile(transformed, finalFile):
     for line in range(len(transformed)):
         finalTxtFile.write(transformed[line]+'\n')
 
-createNewFile(deTransformClient('finalTxtFile.ino'), 'final.txt')
+# createNewFile(deTransformClient('inoToConvert.ino'), 'final.txt')
+
+a = 10
+b = 20
+print(a+b)

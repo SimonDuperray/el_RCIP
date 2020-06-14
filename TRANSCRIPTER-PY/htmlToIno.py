@@ -16,4 +16,4 @@ def createNewFile(transformed, finalFile):
     for line in range(len(transformed)):
         finalTxtFile.write(transformed[line]+'\n')
 
-createNewFile(transformClient('test.html'), 'finalTxtFile.ino')
+createNewFile(transformClient('index.html'), 'index.ino')

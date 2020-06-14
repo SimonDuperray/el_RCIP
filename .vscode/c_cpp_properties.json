@@ -3,10 +3,14 @@
         {
             "name": "Win32",
             "includePath": [
+                "D:\\Arduino\\tools\\**",
+                "D:\\Arduino\\hardware\\arduino\\avr\\**",
                 "C:\\Users\\Simon Duperray\\AppData\\Local\\Arduino15\\packages\\esp8266\\tools\\**",
                 "C:\\Users\\Simon Duperray\\AppData\\Local\\Arduino15\\packages\\esp8266\\hardware\\esp8266\\2.7.1\\**"
             ],
-            "forcedInclude": [],
+            "forcedInclude": [
+                "D:\\Arduino\\hardware\\arduino\\avr\\cores\\arduino\\Arduino.h"
+            ],
             "intelliSenseMode": "msvc-x64",
             "compilerPath": "D:\\LLVM\\bin\\clang.exe",
             "cStandard": "c11",

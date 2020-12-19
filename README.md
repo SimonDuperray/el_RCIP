@@ -10,7 +10,10 @@
 ## :page_facing_up: General info
 RCIP is a webpage where you can control robots via wifi (ESP8266 Wemos).
 You can link the robot to the website via ESP's unique IP address and send data from the robots.
-There is a client space for every robot, we can change its name, password, ip etc.
+There is a client space for every robot, we can change its name, password, ip etc.<br><br>
+[![rcip1.png](https://i.postimg.cc/wMcRNktd/rcip1.png)](https://postimg.cc/rRspXxCh)<br><br>
+[![rcip2.png](https://i.postimg.cc/Twj3N3TV/rcip2.png)](https://postimg.cc/dk1FLvk3)<br><br>
+
 	
 ## :computer: Technologies
 Chrono_Background is created with:

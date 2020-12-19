@@ -16,6 +16,8 @@ There is a client space for every robot, we can change its name, password, ip et
 [![arduino1.png](https://i.postimg.cc/q74Jhdsg/arduino1.png)](https://postimg.cc/sMHdqq0R)<br><br>
 This algorithm adapts HTML code to render it with the ESP8266.<br><br>
 [![transcripter.png](https://i.postimg.cc/VNfwsWwC/transcripter.png)](https://postimg.cc/RWDyXfNS)<br><br>
+Some wirings:<br><br>
+[![witinh.png](https://i.postimg.cc/x1Wst0xT/witinh.png)](https://postimg.cc/BjBcvGfd)
 
 	
 ## :computer: Technologies

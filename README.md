@@ -13,8 +13,9 @@ You can link the robot to the website via ESP's unique IP address and send data 
 There is a client space for every robot, we can change its name, password, ip etc.<br><br>
 [![rcip1.png](https://i.postimg.cc/6qGYxg1f/rcip1.png)](https://postimg.cc/RJ4ccsmW)<br><br>
 [![rcip2.png](https://i.postimg.cc/k510Jrw0/rcip2.png)](https://postimg.cc/1gFCBjkB)<br><br>
-[![arduino1.png](https://i.postimg.cc/28r2Kc7h/arduino1.png)](https://postimg.cc/bdVxGRMw)
-This algorithm adapts HTML code to render it with the ESP8266.
+[![arduino1.png](https://i.postimg.cc/28r2Kc7h/arduino1.png)](https://postimg.cc/bdVxGRMw)<br><br>
+This algorithm adapts HTML code to render it with the ESP8266.<br><br>
+[![transcripter.png](https://i.postimg.cc/85ghrcyM/transcripter.png)](https://postimg.cc/kVwV0JPg)<br><br>
 
 	
 ## :computer: Technologies

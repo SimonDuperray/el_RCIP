@@ -22,6 +22,6 @@ Chrono_Background is created with:
 	
 ## :cd: Setup
 Clone these files anywhere and browse the files.
-```bat
-git clone https://github.com/SimonDuperray/el_RCIP.git
+```batch
+$ git clone https://github.com/SimonDuperray/el_RCIP.git
 ```
